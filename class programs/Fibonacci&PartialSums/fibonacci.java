@@ -39,7 +39,7 @@ class PartialFibonacci {
            {
               fibArr[i] = 0;
            }
-           if else(i == 1)
+           else if(i == 1)
            {
               fibArr[i] = 1;
            }
