@@ -65,7 +65,7 @@ class PartialFibonacci {
             arr[i] = nums.nextInt();
             while(arr[i] < 1 || arr[i] > 10)
             {
-                System.out.println("Your number HAS to be between 1 and 10. Try again:  ");
+                System.out.println("Your number must be between 1 and 10. Try again:  ");
                 arr[i] = nums.nextInt();
             }
         }
