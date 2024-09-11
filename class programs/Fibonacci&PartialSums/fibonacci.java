@@ -32,12 +32,21 @@ class PartialFibonacci {
         System.out.println();
        
         int fibArr[] = new int[fSize];
-        fibArr[0] = 0;
-        fibArr[1] = 1;
        
-        for(int i = 2; i < fibArr.length; i++)
+        for(int i = 0; i < fibArr.length; i++)
         {
+           if(i == 0)
+           {
+              fibArr[i] = 0;
+           }
+           if else(i == 1)
+           {
+              fibArr[i] = 1;
+           }
+           else
+           {
             fibArr[i] = fibArr[i-2] + fibArr[i-1];
+           }
         }
          printArray(fibArr);
          System.out.println();
