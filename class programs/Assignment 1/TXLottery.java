@@ -70,12 +70,7 @@ class TXLottery
         // if the number is already in the set, ask the user again.
         if(userNums.contains(numbers))
         {
-          while(numbers < 1 || numbers > 54 || userNums.contains(numbers))
-          {
             System.out.println("Please try again. Your number must be unique and in range.");
-            numbers = nums.nextInt();
-          }
-          userNums.add(numbers);
         }
         
         // if the number is out of range, ask the user again.
