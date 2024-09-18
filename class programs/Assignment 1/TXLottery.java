@@ -4,9 +4,11 @@
 // 6 randomly generated numbers. Numbers cannot be outside the range
 // and must be unique, meaning no repeated numbers.
 
+// I wrote this program in VSCode. I did not have to make my class
+// public in order to write it. I guess I have a different version of 
+// java or a different java extension.
 
-
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,10 +18,9 @@ class TXLottery
     {
         System.out.println("Carlos Polanco");
         System.out.print("""
-                         This program is meant to simulate the Texas Lottery.
-                         The user enters numbers between 1 and 54 (inclusive)
-                         and see if it matches with the 6 randomly generated 
-                         numbers. Numbers cannot be outside the range and 
+                         This program is meant to simulate the Texas Lottery. The user enters 6 
+                         numbers between 1 and 54 (inclusive) and see if it matches with the 
+                         6 randomly generated numbers. Numbers cannot be outside the range and 
                          must be unique, meaning no repeated numbers. \n\n""");
     }
   
@@ -30,7 +31,7 @@ class TXLottery
       // creating a set to store the numbers before storing them in an array.
       // this is to make sure that the numbers being added are unique.
       // add() does not let any duplicates into the set.
-      HashSet<Integer> randNums = new HashSet<>();
+      LinkedHashSet<Integer> randNums = new LinkedHashSet<>();
 
       while(randNums.size() < lot.length)
       {
@@ -56,7 +57,7 @@ class TXLottery
 
        // using a set again since it includes the contains() method
        // which checks if a number that was entered is in the list/set.
-       HashSet<Integer> userNums = new HashSet<>();
+       LinkedHashSet<Integer> userNums = new LinkedHashSet<>();
        
        System.out.println("Welcome to the Texas Lottery!");
        
@@ -70,7 +71,12 @@ class TXLottery
         // if the number is already in the set, ask the user again.
         if(userNums.contains(numbers))
         {
+          while(numbers < 1 || numbers > 54 || userNums.contains(numbers))
+          {
             System.out.println("Please try again. Your number must be unique and in range.");
+            numbers = nums.nextInt();
+          }
+          userNums.add(numbers);
         }
         
         // if the number is out of range, ask the user again.
